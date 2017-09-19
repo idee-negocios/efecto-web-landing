@@ -1,10 +1,108 @@
 @import '../../colors.sass'
+@import "../../../node_modules/bootstrap/scss/bootstrap";
 
 .container
     display: flex
     flex-direction: column
+    font-family: 'Open Sans', sans-serif;
+    width: 100%
+    height: auto
+    padding: 0px 0px
+    .circle
+        position: absolute
+        z-index: 2
+        align-self: flex-start
+        width: 70px;
+        height: 70px;
+        background-color: $light-gray;
+        border-radius: 50%;
+        border: 7px solid rgba(0,0,0, .1)
+        align-self: flex-center
+        margin-left: 48%
+        margin-top: -2rem
+        i
+            font-size: 3.5rem
+            color: $light-blue
+            text-align: center;
+            margin-left: 9px
+            margin-top: 9px    
     .shape
+        z-index: 1
         width: 100%
         height: 60rem
         clip-path: polygon(50% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
         background: url('/assets/images/contacto.png')
+        background-attachment: fixed
+        align-content: center
+        vertical-align: middle
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        text-align: center
+        .header
+            margin-top: 8rem
+            h3 
+                font-size: 2rem
+                color: white
+                font-weight: bolder
+            p 
+                color: white
+            hr 
+                width: 10%
+                margin-top: 1.5rem
+                border-top: thin solid #FFF;
+        
+        .content
+            margin-top: 2rem
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            align-content: center
+            .info
+                background-color: white
+                margin-right: 2rem
+                width: 22%
+                height: 33rem
+                text-align: left 
+                padding:  4rem 0rem 4rem 5rem               
+                h4 
+                    color: $light-blue
+                    font-weight: bold
+                    font-size: 1.5rem
+                    margin: 2rem 0rem
+                p 
+                    color: $dark-gray
+                    margin: 0px
+                .text
+                    margin-top: 2rem
+            form
+                display: flex
+                background-color: white
+                width: 30%
+                height: 36rem
+                padding: 5rem 0rem 0rem 5rem
+                align-content: center
+                .form-group
+                    width: 70%
+                    input
+                        margin-top: 1rem
+                        border: 0;
+                        border-radius: 0px
+                        border-bottom: 1px solid $dark-gray;
+                    select  
+                        margin-top: 1rem
+                        border: 0;
+                        border-radius: 0px
+                        border-bottom: 1px solid $dark-gray;
+                        font-family: 'Open Sans', sans-serif;
+                textarea
+                    margin-top: 1rem 
+                    width: 70%
+                    border: 0;
+                    border-radius: 0px
+                    border-bottom: 1px solid $dark-gray;             
+                button 
+                    width: 20%
+                    margin-top: 2rem
+                    background-color: $light-blue
