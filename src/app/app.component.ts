@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'app';
+  section: String;
+
+  sectionSelected(event) {
+    this.section = event;
+  }
 }

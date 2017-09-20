@@ -1,7 +1,7 @@
 <app-header></app-header>       
 <app-services></app-services>
 <app-web></app-web>
-<app-prices></app-prices>
+<app-prices (section)="sectionSelected($event)"></app-prices>
 <app-social></app-social>
 <app-advertising></app-advertising>
-<app-contact></app-contact>
+<app-contact [select]="section"></app-contact>

@@ -11,6 +11,9 @@ import { PricesComponent } from './prices/prices.component';
 import { SocialComponent } from './social/social.component';
 import { AdvertisingComponent } from './advertising/advertising.component';
 import { ContactComponent } from './contact/contact.component';
+import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scroll';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,13 @@ import { ContactComponent } from './contact/contact.component';
     SocialComponent,
     AdvertisingComponent,
     ContactComponent,
+    SmoothScrollToDirective,
+    SmoothScrollDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

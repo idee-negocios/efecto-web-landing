@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper" id="contacto">
   <div class="circle">
     <i class="fa fa-arrow-down"></i>
   </div>
@@ -25,24 +25,29 @@
           <p>contacto@gmail.com</p>
         </div>
       </div>
-      <form class="card">
+      <form class="card" [formGroup]="contactForm">
           <div class="form-group">            
-            <input type="text" class="form-control" id="name" placeholder="Nombre">
-          </div>
-          <div class="form-group">            
-            <input type="text" class="form-control" id="email" placeholder="Email">
-          </div>
-          <div class="form-group">            
-            <select class="form-control" id="exampleFormControlSelect1">
+            <input type="text" class="form-control" formControlName="name" placeholder="*Nombre">                     
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            <input type="text" class="form-control" formControlName="phone" placeholder="*Teléfono">       
+            <select class="form-control" formControlName="plan">
+              <option value="" hidden>Elegí tu plan</option>
               <option>Plantilla</option>
               <option>Personalizada</option>
               <option>E-Commerce</option>
             </select>
-          </div>
-          <textarea class="form-control" id="Mensaje" rows="7" placeholder="Mensaje"></textarea>
-          <button type="button" class="btn btn-info">Enviar Mensaje</button>
-     
-        </form> 
+            <select class="form-control" formControlName="extras">
+              <option value="" hidden>Elegí tu servicio</option>
+              <option>Ninguna</option>
+              <option>Red Social</option>
+              <option>Publicidad On-Line</option>
+              <option>Ambos</option>
+            </select>
+            <textarea class="form-control" formControlName="message" rows="7" placeholder="Mensaje"></textarea>
+            <label>Campos * obligatorios</label>
+            <button type="button" class="btn btn-info" (click)="submit()">Enviar Mensaje</button>
+          </div>     
+      </form> 
     </div>    
   </div>
 </div>
