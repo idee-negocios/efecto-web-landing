@@ -26,15 +26,15 @@ export class ContactComponent implements OnInit, OnChanges {
 
   createForm() {
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      phone: ['', Validators.required],
+      name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      email: ['', Validators.compose([Validators.pattern('[^ @]*@[^ @]*')])],
+      phone: ['', Validators.compose([Validators.required, Validators.minLength(8)])],
       plan: ['', Validators.required],
       extras: ['', Validators.required],
       message: ['', Validators.required]
     });
   }
-  submit() {
+  submit(): void {
     const headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
