@@ -1,8 +1,10 @@
-import { Component, OnInit, OnChanges, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ElementRef, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
+
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { AlertService } from '../_services/index';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +16,7 @@ export class ContactComponent implements OnInit, OnChanges {
   @Input() select: String;
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: Http) {
+  constructor(private fb: FormBuilder, private http: Http, private alertService: AlertService) {
     this.createForm();
    }
 
@@ -43,9 +45,12 @@ export class ContactComponent implements OnInit, OnChanges {
     const headerObj = {
       headers: new Headers(headerDict),
     };
-     this.http.post('http://ideenegocios.com.ar:3000/efecto-web', JSON.stringify(this.contactForm.value), headerObj)
+    this.http.post('http://ideenegocios.com.ar:3000/efecto-web', JSON.stringify(this.contactForm.value), headerObj)
     .subscribe((res: Response) => {
-      alert('oka');
+      this.success('Mensaje Enviado');
     });
+  }
+  success(message: string) {
+    this.alertService.success(message);
   }
 }

@@ -15,7 +15,8 @@ import { AdvertisingComponent } from './advertising/advertising.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scroll';
-
+import { AlertComponent } from './_directives/index';
+import { AlertService } from './_services/index';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scrol
     SocialComponent,
     AdvertisingComponent,
     ContactComponent,
+    AlertComponent,
     SmoothScrollToDirective,
     SmoothScrollDirective,
   ],
@@ -34,9 +36,9 @@ import { SmoothScrollToDirective, SmoothScrollDirective } from 'ng2-smooth-scrol
     BrowserModule,
     ReactiveFormsModule,
     HttpModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [AlertService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
