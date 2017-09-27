@@ -7,8 +7,11 @@
     font-family: 'Open Sans', sans-serif;
     margin-top: 5rem
     width: 100%
-    height: 57rem
+    //height: 57rem
     padding: 0px 0px
+    align-content: center
+    align-items: center
+    justify-content: flex-start
     .circle
         position: absolute
         z-index: 2
@@ -18,9 +21,10 @@
         background-color: $light-gray;
         border-radius: 50%;
         border: 7px solid rgba(0,0,0, .1)
-        align-self: flex-center
-        margin-left: 48.25%
         margin-top: -2rem
+        left: 50%
+        margin-left: -35px
+
         i
             font-size: 3.5rem
             color: $light-blue
@@ -32,14 +36,12 @@
         width: 100%
         height: 57rem
         clip-path: polygon(50% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
-        background: url('/assets/images/contacto.png')
-        background-attachment: fixed
-        align-content: center
-        vertical-align: middle
-        justify-content: center
-        align-items: center
-        flex-direction: column
+        background: url('/assets/images/contacto.png') no-repeat center #fff
+        background-size: cover
         text-align: center
+        img 
+            height: 50%
+            width: 50%
         .header
             margin-top: 8rem
             h3 
@@ -63,10 +65,10 @@
             .info
                 background-color: white
                 margin-right: 2rem
-                width: 22%
+                width: 25%
                 height: 36rem
                 text-align: left 
-                padding:  2rem 0rem 4rem 5rem               
+                padding:  3% 0% 4% 4%               
                 h4 
                     color: $light-blue
                     font-weight: bold
@@ -80,9 +82,9 @@
             form
                 display: flex
                 background-color: white
-                width: 30%
+                width: 35%
                 height: 36rem
-                padding: 2rem 0rem 0rem 5rem
+                padding:  3% 0% 4% 4%
                 align-content: center
                 .form-group
                     width: 80%
@@ -107,11 +109,11 @@
                             font-size: 0.9rem
                             color: $dark-gray                            
                             margin-bottom: 0.5rem
-                                            
-                        button 
-                            width: 9rem
-                            margin-top: 0.5rem
-                            background-color: $light-blue
+                        .alert                    
+                            button 
+                                width: 9rem
+                                margin-top: 0.5rem
+                                background-color: $light-blue
                 
 .fa-facebook 
     background: #3B5998;

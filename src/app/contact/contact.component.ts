@@ -4,7 +4,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { AlertService } from '../_services/index';
+import { NotificationsService } from 'angular2-notifications';
 
 @Component({
   selector: 'app-contact',
@@ -16,11 +16,13 @@ export class ContactComponent implements OnInit, OnChanges {
   @Input() select: String;
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: Http, private alertService: AlertService) {
+  constructor(private fb: FormBuilder, private http: Http, private _notificationsService: NotificationsService ) {
     this.createForm();
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.contactForm.controls.plan.setValue('');
+  }
 
   ngOnChanges() {
     this.contactForm.get('plan').setValue(this.select);
@@ -47,10 +49,17 @@ export class ContactComponent implements OnInit, OnChanges {
     };
     this.http.post('http://ideenegocios.com.ar:3000/efecto-web', JSON.stringify(this.contactForm.value), headerObj)
     .subscribe((res: Response) => {
-      this.success('Mensaje Enviado');
+      this._notificationsService.success(
+        'Listo!',
+        'Mensaje enviado con éxito',
+        {
+            timeOut: 5000,
+            showProgressBar: true,
+            pauseOnHover: false,
+            clickToClose: false,
+            maxLength: 25
+        }
+      );
     });
-  }
-  success(message: string) {
-    this.alertService.success(message);
   }
 }
