@@ -11,10 +11,9 @@
         width: 100%
         height: 60rem
         margin-top: -10rem
-        background: url('/assets/images/mendoza.png') center
+        background: url('/assets/images/mendoza.png') center no-repeat
         background-attachment: fixed
         align-content: center
-        vertical-align: middle
         display: flex
         justify-content: center
         align-items: center
@@ -30,13 +29,28 @@
             font-size: 1.2rem;
             width: 42rem
             @include mobile
-                font-size: 0.3rem
                 width: 20rem
+                margin-top: -4rem
+                p 
+                    font-size: 0.7rem
+                h1 
+                    font-size: 1.5rem
+                hr 
+                    padding: 0
+                    box-sizing: border-box;
+                    margin-bottom: -1rem
+                hr.separator:after  
+                    top: -1rem
+                    font-size: 0.7rem
+
+
         .logo
             img
                 width: 50rem 
                 @include mobile
-                    width: 25rem
+                    width: 22rem
+                    margin-top: -1rem
+                    margin-bottom: 0.5rem
     .circle   
             position: relative
             width: 70px;
@@ -53,6 +67,7 @@
                 height: 30px;
                 top: -20px
                 margin-left: -15px
+                border: 4px solid rgba(0,0,0, .1)
             i
                 font-size: 3.5rem
                 color: $light-blue

@@ -1,4 +1,5 @@
 @import '../../colors.sass'
+@import '../../responsive.sass'
 
 .container
     display: flex
@@ -6,11 +7,15 @@
     margin-bottom: 8rem
     font-family: 'Open Sans', sans-serif;
     align-content: center
-    vertical-align: middle
     justify-content: center
     align-items: center
+    @include mobile
+        margin-top: 4rem
+        margin-bottom: 4rem
+        flex-direction: column
 
-    .item
+
+    .item, .blue
         align-content: center
         vertical-align: middle
         display: flex
@@ -21,42 +26,40 @@
         text-align-last: center;
         margin: 1rem 2rem
         color: $dark-gray
-        .icon
-            border: thin gray solid
+        @include mobile
+            margin: 0.5rem 1rem
+            p  
+                display: none
+            hr  
+                display: none
+        .icon            
             width: 5rem
             height: 5rem
             text-align: center  
+            @include mobile
+                width: 2.5rem
+                height: 2.5rem
             i
                 font-size: 2rem
                 color: $light-blue
                 margin-top: 1.5rem
-        h2 
-            color: $dark-gray
+                @include mobile
+                    font-size: 1rem
+                    margin-top: 0.8rem
 
-
-.blue
-    align-content: center
-    vertical-align: middle
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    text-align: justify
-    text-align-last: center;
-    margin: 1rem 2rem
-    color: $dark-gray    
+.item
     .icon
-        width: 5rem
-        height: 5rem
+        border: thin gray solid    
+    h2 
+        color: $dark-gray    
+
+.blue  
+    .icon
         border: thin $light-blue solid 
-        text-align: center
         transform: rotateZ(-45deg)
         i
             transform: rotateZ(45deg)
-            font-size: 2rem
             color: $light-blue
-            margin-top: 1.5rem
             margin-left: -0.4rem
     h2
         color: $light-blue
-

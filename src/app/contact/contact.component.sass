@@ -1,4 +1,5 @@
 @import '../../colors.sass'
+@import '../../responsive.sass'
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
 .wrapper
@@ -12,6 +13,8 @@
     align-content: center
     align-items: center
     justify-content: flex-start
+    @include mobile
+        margin-top: -18rem
     .circle
         position: absolute
         z-index: 2
@@ -24,36 +27,59 @@
         margin-top: -2rem
         left: 50%
         margin-left: -35px
-
+        @include mobile
+            margin-top: -1rem
+            width: 40px;
+            height: 40px;
+            margin-left: -20px
+            border: 4px solid rgba(0,0,0, .1)
         i
             font-size: 3.5rem
             color: $light-blue
             text-align: center;
             margin-left: 2px
-            margin-top: 4px    
+            margin-top: 4px
+            @include mobile                    
+                font-size: 1.8rem
+                margin-top: 3px
+                margin-left: 3px    
     .shape
         z-index: 1
         width: 100%
         height: 57rem
         clip-path: polygon(50% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
         background: url('/assets/images/contacto.png') no-repeat center #fff
+        background-attachment: fixed
         background-size: cover
         text-align: center
+        @include mobile
+            height: 72rem
+            clip-path: polygon(50% 0%, 100% 3%, 100% 100%, 0 100%, 0 3%);
         img 
             height: 50%
             width: 50%
         .header
             margin-top: 8rem
+            @include mobile
+                margin-top: 4rem
             h3 
                 font-size: 2rem
                 color: white
                 font-weight: bolder
+                @include mobile
+                    font-size: 1.5rem
+                    margin-bottom: 0.8rem
             p 
                 color: white
+                @include mobile
+                    font-size: 0.8rem
             hr 
                 width: 10%
                 margin-top: 1.5rem
                 border-top: thin solid #FFF;
+                @include mobile
+                    margin-top: 0.8rem
+                    width: 30%
         
         .content
             margin-top: 2rem
@@ -62,23 +88,36 @@
             justify-content: center
             align-items: center
             align-content: center
+            @include mobile
+                margin-top: 1rem
+                flex-direction: column
             .info
                 background-color: white
                 margin-right: 2rem
                 width: 25%
                 height: 36rem
                 text-align: left 
-                padding:  3% 0% 4% 4%               
+                padding:  3% 0% 4% 4%     
+                @include mobile
+                    margin-right: 0rem
+                    margin-bottom: 1.5rem
+                    height: 18rem
+                    width: 80%        
                 h4 
                     color: $light-blue
                     font-weight: bold
                     font-size: 1.5rem
                     margin: 2rem 0rem
+                    @include mobile
+                        font-size: 0.8rem
+                        margin: 1rem 0rem
                 p 
                     color: $dark-gray
                     margin: 0px
                 .text
                     margin-top: 2rem
+                    @include mobile
+                        margin-top: 1rem
             form
                 display: flex
                 background-color: white
@@ -86,8 +125,13 @@
                 height: 36rem
                 padding:  3% 0% 4% 4%
                 align-content: center
+                @include mobile
+                    height: 34rem
+                    width: 80%                 
                 .form-group
                     width: 80%
+                    @include mobile
+                        width: 95%
                     input
                         margin-top: 1rem
                     select  
