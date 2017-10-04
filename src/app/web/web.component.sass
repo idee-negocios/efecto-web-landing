@@ -1,4 +1,5 @@
 @import './../../responsive.sass';
+@import './../../colors.sass';
 
 .container
     margin-top: 8rem
@@ -15,14 +16,24 @@
 
     .content
         position: absolute
-        float: right
-        padding-left: 40%
+        float: right        
         display: flex
         flex-direction: column
         align-items: flex-start
         justify-content: flex-end
         align-content: flex-start
-        font-family: 'Open Sans', sans-serif;        
+        font-family: 'Open Sans', sans-serif;
+        left: 50%
+        top: 3rem        
         .header
-            h3 
-                display: inline-block                
+            display: flex
+            flex-direction: row
+            .text 
+                margin-bottom: 1rem
+                width: 100%
+                h3  
+                    margin-top: -0.4rem
+                    color: $black
+            .rectangle
+
+               

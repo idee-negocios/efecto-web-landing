@@ -3,16 +3,18 @@
 
 .container
     display: flex
-    margin-top: 8rem
-    margin-bottom: 8rem
+    margin-top: 3rem
+    margin-bottom: 10rem
     font-family: 'Open Sans', sans-serif;
     align-content: center
     justify-content: center
     align-items: center
+    padding: 0rem 12rem
     @include mobile
         margin-top: 4rem
         margin-bottom: 4rem
         flex-direction: column
+        padding: 0rem
 
 
     .item, .blue
@@ -24,8 +26,13 @@
         flex-direction: column
         text-align: justify
         text-align-last: center;
-        margin: 1rem 2rem
+        margin: 1rem 1rem
         color: $dark-gray
+        h3  
+            font-size: 1.2rem
+            color: $black
+        p 
+            font-size: 0.9rem
         @include mobile
             margin: 0.5rem 1rem
             p  
@@ -35,23 +42,24 @@
         .icon            
             width: 5rem
             height: 5rem
-            text-align: center  
+            text-align: center
+            margin-bottom: 1rem  
             @include mobile
-                width: 2.5rem
-                height: 2.5rem
+                width: 3rem
+                height: 3rem
             i
                 font-size: 2rem
                 color: $light-blue
                 margin-top: 1.5rem
                 @include mobile
                     font-size: 1rem
-                    margin-top: 0.8rem
+                    margin-top: 1rem
 
 .item
     .icon
         border: thin gray solid    
-    h2 
-        color: $dark-gray    
+    h3 
+        color: $dark-gray            
 
 .blue  
     .icon
@@ -60,6 +68,6 @@
         i
             transform: rotateZ(45deg)
             color: $light-blue
-            margin-left: -0.4rem
-    h2
+            margin-left: -0.3rem
+    h3
         color: $light-blue
