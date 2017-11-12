@@ -9,7 +9,7 @@
       <hr class="separator">
     </div>
     <div class="content">
-      <div class="info card">               
+      <div class="info card">
         <div class="text">
           <h4>LLAMANOS</h4>
           <p>2613072398</p>
@@ -21,36 +21,48 @@
         <div class="text">
           <h4>REDES SOCIALES</h4>
           <a href="https://www.facebook.com/Efecto-WEB-Dise%C3%B1o-web-Mendoza-277572266075955/" class="fa fa-facebook"></a>
-        </div> 
+        </div>
       </div>
       <form class="card" [formGroup]="contactForm">
           <div class="form-group">
-            <input type="text" class="form-control" formControlName="name" placeholder="*Nombre" required [ngClass] = "{
-              'is-invalid': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
-              'is-valid': contactForm.controls.name.valid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)
-            }">           
+            <div class="form-row">
+              <div class="col">
+                <input type="text" class="form-control" formControlName="name" placeholder="*Nombre" required [ngClass] = "{
+                  'is-invalid': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
+                  'is-valid': contactForm.controls.name.valid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)
+                }">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" formControlName="phone" placeholder="*Teléfono" required [ngClass] = "{
+                  'is-invalid': contactForm.controls.phone.invalid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched),
+                  'is-valid': contactForm.controls.phone.valid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched)
+                }">
+              </div>
+            </div>
             <input type="text" class="form-control" formControlName="email" placeholder="Email" [ngClass] = "{
               'is-invalid': contactForm.controls.email.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched),
               'is-valid': contactForm.controls.email.valid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)
             }">
-            <input type="text" class="form-control" formControlName="phone" placeholder="*Teléfono" required [ngClass] = "{
-              'is-invalid': contactForm.controls.phone.invalid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched),
-              'is-valid': contactForm.controls.phone.valid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched)
-            }">       
-            <select class="form-control" formControlName="plan">
-              <option value="" hidden>Elegí tu plan</option>
-              <option>Plantilla</option>
-              <option>Personalizada</option>
-              <option>E-Commerce</option>
-            </select>
-            <select class="form-control" formControlName="extras">
-              <option value="" hidden>Elegí tu servicio</option>
-              <option>Ninguna</option>
-              <option>Red Social</option>
-              <option>Publicidad On-Line</option>
-              <option>Ambos</option>
-            </select>
-            <textarea class="form-control" formControlName="message" rows="7" placeholder="Mensaje" required [ngClass] = "{
+            <div class="form-row">
+              <div class="col">
+                <select class="form-control" formControlName="plan">
+                  <option value="" hidden>Elegí tu plan</option>
+                  <option>Plantilla</option>
+                  <option>Personalizada</option>
+                  <option>E-Commerce</option>
+                </select>
+              </div>
+              <div class="col">
+                <select class="form-control" formControlName="extras">
+                  <option value="" hidden>Elegí tu servicio</option>
+                  <option>Ninguna</option>
+                  <option>Red Social</option>
+                  <option>Publicidad On-Line</option>
+                  <option>Ambos</option>
+                </select>
+              </div>
+            </div>
+            <textarea class="form-control" formControlName="message" rows="5" placeholder="Mensaje" required [ngClass] = "{
               'is-invalid': contactForm.controls.message.invalid && (contactForm.controls.message.dirty || contactForm.controls.message.touched),
               'is-valid': contactForm.controls.message.valid && (contactForm.controls.message.dirty || contactForm.controls.message.touched)
             }"></textarea>
@@ -58,9 +70,9 @@
               <label>Campos * obligatorios</label>
               <button type="button" class="btn btn-info" (click)="submit()" [disabled]="!contactForm.valid">Enviar Mensaje</button>
                 <simple-notifications></simple-notifications>
-            </div>                      
-          </div>     
-      </form>    
-    </div>    
+            </div>
+          </div>
+      </form>
+    </div>
   </div>
 </div>
