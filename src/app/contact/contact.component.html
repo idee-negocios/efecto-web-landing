@@ -26,13 +26,13 @@
       <form class="card" [formGroup]="contactForm">
           <div class="form-group">
             <div class="form-row">
-              <div class="col">
+              <div class="col-12 col-md-6">
                 <input type="text" class="form-control" formControlName="name" placeholder="*Nombre" required [ngClass] = "{
                   'is-invalid': contactForm.controls.name.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched),
                   'is-valid': contactForm.controls.name.valid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)
                 }">
               </div>
-              <div class="col">
+              <div class="col-12 col-md-6">
                 <input type="text" class="form-control" formControlName="phone" placeholder="*Teléfono" required [ngClass] = "{
                   'is-invalid': contactForm.controls.phone.invalid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched),
                   'is-valid': contactForm.controls.phone.valid && (contactForm.controls.phone.dirty || contactForm.controls.phone.touched)
@@ -44,7 +44,7 @@
               'is-valid': contactForm.controls.email.valid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)
             }">
             <div class="form-row">
-              <div class="col">
+              <div class="col-12 col-md-6">
                 <select class="form-control" formControlName="plan">
                   <option value="" hidden>Elegí tu plan</option>
                   <option>Plantilla</option>
@@ -52,7 +52,7 @@
                   <option>E-Commerce</option>
                 </select>
               </div>
-              <div class="col">
+              <div class="col-12 col-md-6">
                 <select class="form-control" formControlName="extras">
                   <option value="" hidden>Elegí tu servicio</option>
                   <option>Ninguna</option>
