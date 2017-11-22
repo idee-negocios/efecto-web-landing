@@ -31,7 +31,6 @@
       }
     },
     {
-      // This is your server app. It is app 1.
       "platform": "server",
       "root": "src",
       "outDir": "dist/server",
@@ -41,7 +40,6 @@
       ],
       "index": "index.html",
       "main": "main.server.ts",
-      "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.server.json",
       "testTsconfig": "tsconfig.spec.json",
